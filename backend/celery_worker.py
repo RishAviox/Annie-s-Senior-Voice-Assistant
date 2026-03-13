@@ -16,8 +16,8 @@ celery_app = Celery("voice_assistant_celery", broker=BROKER_URL, backend=RESULT_
 # Email Sending configuration
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SENDER_EMAIL = os.getenv("SENDER_EMAIL", "sachin@avioxtechnologies.com")
-SENDER_PASSWORD = os.getenv("SENDER_PASSWORD", "yavjypudtladcyub")
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+SENDER_PASSWORD = os.getenv("SENDER_PASSWORD")
 
 @celery_app.task
 def send_otp_email_task(receiver_email: str, otp: str):
