@@ -112,7 +112,7 @@ class FullProfileUpdate(AddressBase):
     
 # Replace this with your actual Google Client ID
 # Google Client ID from environment or fallback
-GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "82095107124-aifr2eqrljqgsh9m4kmga7ubdtr08ga8.apps.googleusercontent.com")
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 
     
 def connect_db():
@@ -120,7 +120,7 @@ def connect_db():
         host=os.getenv("DB_HOST", "localhost"),
         database=os.getenv("DB_NAME", "Registrations"),
         user=os.getenv("DB_USER", "postgres"),
-        password=os.getenv("DB_PASSWORD", "Postgres@123"),
+        password=os.getenv("DB_PASSWORD"),
     )
 
 @app.get("/")
